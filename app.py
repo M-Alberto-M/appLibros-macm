@@ -3,8 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 
 app = Flask(__name__)
-# app.config["SQLALCHEMY_DATABASE_URI"]="postgresql://postgres:bionicle@localhost:5432/db"
-app.config["SQLALCHEMY_DATABASE_URI"]='postgres://hiltevtnvnajpm:f974b6be22ccf430929642987bc03b3c61bcaf48569113be84ef78d0637049e8@ec2-34-193-235-32.compute-1.amazonaws.com:5432/d68jo8qlcja2dg'
+app.config["SQLALCHEMY_DATABASE_URI"]="postgresql://postgres:bionicle@localhost:5432/db"
+# app.config["SQLALCHEMY_DATABASE_URI"]='postgres://hiltevtnvnajpm:f974b6be22ccf430929642987bc03b3c61bcaf48569113be84ef78d0637049e8@ec2-34-193-235-32.compute-1.amazonaws.com:5432/d68jo8qlcja2dg'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
 
 db = SQLAlchemy(app)
