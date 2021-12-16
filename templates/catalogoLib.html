@@ -1,0 +1,67 @@
+{% extends "layout.html" %} 
+
+{% block contenido %}
+
+<head>
+    <link rel="icon" href="{{url_for('static',filename = 'images/mainLog.png')}}"  type="image/x-icon" />
+    <title>Catalogo libros</title> 
+</head>
+
+
+<h2><center>Lista de libros registrados  </center></h2>
+
+<p><center>
+
+    
+    <table class="styled-table" styles="width:100%">
+        <thead>
+        <tr>
+            <td>Titulo del libro </td>
+            <td> Fecha de publicacion </td>
+            <td> N de paginas </td>
+            <td> Formato </td>
+            <td> Volumen </td>
+            <td> Editorial </td>
+            <td> Genero </td>
+            <td> Autor </td>
+            </tr>
+        </thead>
+
+    {% for libro in Libros %}
+    
+    <p> 
+        <tr>
+            <td>{{libro.titulo_libro}}</td> 
+            <td>{{libro.fecha_publicacion}}</td> 
+            <td>{{libro.numero_paginas}}</td>
+            <td>{{libro.formato}}</td> 
+            <td>{{libro.volumen}}</td>
+            <td>{{libro.nombre_editorial}}</td>
+            <td>{{libro.nombre_genero}}</td> 
+            <td>{{libro.nombre_autor}}</td> 
+
+            <td><form action="/misFavoritos/{{libro.id_libro}}" >
+                <input type="submit" value="Favorito" name="favorito"> 
+            </form></td> 
+
+            <td><form action="/eliminarlibro/{{libro.id_libro}}" >
+                <input type="submit" value="Eliminar"> 
+            </form></td> 
+
+            <td><form action="/edit/{{libro.id_libro}}" >
+                <input type="submit" value="Editar"> 
+            </form></td> 
+
+            
+
+        </tr>
+    </p>
+    {% endfor %}    
+    </table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>  
+</center></p>
+{% endblock %}
+

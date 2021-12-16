@@ -1,0 +1,46 @@
+{% extends "layout.html" %} 
+
+{% block contenido %}
+
+<head>
+    <link rel="icon" href="{{url_for('static',filename = 'images/mainLog.png')}}"  type="image/x-icon" />
+    <title> Catalogo genero</title> 
+</head>
+
+<h2><center>Lista de generos registrados  </center></h2>
+
+<p><center>
+    
+    <table class="styled-table" styles="width:100%">
+        <thead>
+        <tr>
+            <td> Generos</td>
+            
+            </tr>
+        </thead>
+
+    {% for genero in Genero %}
+    
+    <p> 
+        <tr>
+            <td>{{genero.nombre_genero}}</td> 
+            
+            
+            <td><form action="/eliminargen/{{genero.id_genero}}" >
+                <input type="submit" value="Eliminar"> 
+            </form></td> 
+
+            <td><form action="/editgen/{{genero.id_genero}}" >
+                <input type="submit" value="Editar"> 
+            </form></td> 
+        </tr>
+    </p>
+    {% endfor %}    
+    </table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>  
+</center></p>
+{% endblock %}
+

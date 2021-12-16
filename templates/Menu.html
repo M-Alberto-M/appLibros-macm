@@ -1,0 +1,64 @@
+{% extends "layout.html" %} 
+
+{% block contenido %}
+
+<style>
+    #lib{ background-color: seashell;}
+    #fp{ background-color: #EBE6E3; }
+ </style>
+
+<head>
+    <link rel="icon" href="{{url_for('static',filename = 'images/mainLog.png')}}"  type="image/x-icon" />
+    <title>Menu</title> 
+</head>
+  
+
+
+<body>
+    <section id=fp class="hero  is-fullheight ">
+        <div class="container ">
+            <!-- <div class="columns is-centered"> -->
+                <section class="section is-small ">
+                    <h2 class="title"><center>Menu Principal </center></h2>
+                    <p>&nbsp;</p>
+                    <div class="columns is-7-fullhd  ">
+                      
+
+                           <div class="column has-text-centered  ">
+                            <a href="http://127.0.0.1:5000/libro"> <button id="bttnRegLib" class="button  is-vcentered is-black is-outlined is-large is-size-3"  >Registra un Libro</button> </a>
+                            <p>&nbsp;</p>
+
+                            
+                           <div class="has-text-centered">
+                                <a href="http://127.0.0.1:5000/catalogoLibros"><button id="bttnCatLib" class="button  is-vcentered is-black is-outlined is-large  is-size-3">Catalogo de Libros</button> </a>
+                                </div>
+                                <p>&nbsp;</p>
+
+                                <div class="has-text-centered">
+                                <a href="http://127.0.0.1:5000/misFavoritos"><button  id="bttnMisFavs" class="button is-vcentered is-black is-outlined is-large  is-size-3">Mis Favoritos</button></a>
+                            </div>     
+                         </div>
+
+                        <div class="column has-text-centered ">
+                            <a href="http://127.0.0.1:5000/catalogoAutor"><button  id="bttnCatAut" class="button is-vcentered is-black is-outlined is-large is-size-3 ">Catalogo de Autores</button></a>
+                            <p>&nbsp;</p>
+
+                          <div class="has-text-centered">
+                                <a href="http://127.0.0.1:5000/catalogoEditorial"> <button  id="bttnCatEdit" class="button is-vcentered is-black is-outlined is-large is-size-3">Catalogo de Editoriales</button></a>
+                                </div>
+                                <p>&nbsp;</p>
+
+                                <td>  <div class="has-text-centered">
+                                <a href="http://127.0.0.1:5000/catalogoGenero" ><button  id="bttnCatGen" class="button is-vcentered is-black is-outlined is-large is-size-3">Catalogo de Generos</button> </a>
+                                </div>
+                        </div>
+
+                    </div>
+                </section>
+            <!-- </div> -->
+        </div>
+    </section>
+</body>
+
+
+{% endblock %}

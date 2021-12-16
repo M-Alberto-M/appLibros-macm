@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    
+<style>
+  #logimg{width: 50%; }
+  #wall{width: 125%; top: 0%;}
+  #bx{ background-color: seashell;}
+   </style>
+
+
+  <head>
+    <meta charset="utf-8">
+    
+    {% block contenido %}
+    <link rel="stylesheet" href="/static/css/estilo.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ingresar</title>  
+    <link rel="icon" href="{{url_for('static',filename = 'images/mainLog.png')}}"  type="image/x-icon" />
+
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+    
+  </head>
+
+  <body>
+    <!-- Formulario -->
+    
+    <div class="columns is-vcentered">
+      
+      <div class="login column is-4 ">
+       
+        <section class="section">
+          <form  id=bx action="/login" method ="post" class="box">
+          <div class="has-text-centered">
+            
+              <img id=logimg src="{{url_for('static',filename = 'images/mainLog.png')}}"  >
+              <p>&nbsp;</p>
+          </div>
+          
+          <!-- Campo de correo electronico -->
+         
+          <div class="field">
+            <label class="label">Correo Electronico</label>
+            <div class="control has-icons-right">
+              <input name="email" class="input is-black"  type="email" required>
+              <span class="icon is-small is-right">
+                <i class="fa fa-user"></i>
+              </span>
+            </div>
+          </div>
+          <!-- Campo de contraseña -->
+          <div class="field">
+            <label class="label">Contraseña</label>
+            <div class="control has-icons-right">
+              <input name="password" class="input is-black" type="password" required>
+              <span class="icon is-small is-right">
+                <i class="fa fa-key"></i>
+              </span>
+            </div>
+          </div>
+          <!-- Boton de inicio de sesion -->
+          <div class="has-text-centered">
+            <button id="bttnIniciar" class="button is-vcentered is-black is-outlined">Iniciar Sesión</button>
+          </div>
+        
+          <!-- Boton de registro -->
+          <div class="has-text-centered">
+            <a href="/registrar"> ¿No tienes cuenta?, Presiona aqui para registrate. </a>
+          </div>
+        </form>
+        </section>
+     
+      </div>
+   
+
+      <div >
+        <div id=wall>
+        <img class="d1" src="{{url_for('static',filename = 'images/walLain.png')}}" >
+      
+      </div>
+    </div>
+  </div>
+  
+
+  </body>
+
+{% endblock %}
+  </html>

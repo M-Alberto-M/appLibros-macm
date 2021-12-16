@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+   {% block titulo %} Pagina modificar {% endblock %}
+   
+   {% block contenido %}
+ <title>Modificar Editorial</title> 
+   <style>
+    #mod{ background-color: seashell;}
+
+ </style>
+   
+   <h3><center>Modificar Editorial registrado </center></h3> <br>
+    <h4><center>En esta sección podrás modificar tus editoriales registradas </center></h4>
+
+    <p><center>
+
+   <form action= "/modificarEditorial" method= "post"  class="box"  id=mod >
+
+      <label for = "nombre"> Nombre de la editorial: </label><br>
+      <input type = "text" name = "nombre_editorial" value = "{{editorial.nombre_editorial}}">
+      <br>
+      <input type = "hidden" name="idedit" value = " {{editorial.id_editorial}}">
+      <br>
+      <input type = "submit" value = "Modificar Editorial">
+      
+  
+   </form> 
+
+</center></p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p> 
+{% endblock %}

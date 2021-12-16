@@ -1,0 +1,46 @@
+{% extends "layout.html" %} 
+
+{% block contenido %}
+
+<head>
+    <link rel="icon" href="{{url_for('static',filename = 'images/mainLog.png')}}"  type="image/x-icon" />
+    <title> Mis favoritos</title> 
+</head>
+
+<h2><center>Lista de libros marcados como favoritos  </center></h2>
+<p>&nbsp;</p> 
+
+<p><center>
+
+
+   <p>&nbsp;</p> 
+    <table class="styled-table" styles="width:100%">
+        <thead>
+        <tr>
+            <td> Libros favoritos</td>
+            
+            </tr>
+        </thead>
+
+    {% for fav in Favoritos %}
+    
+    <p> 
+        <tr>
+            <td>{{fav.titulo_libro}}</td> 
+            <td>{{fav.titulo_libro}}</td> 
+            
+            
+            <td><form action="/eliminarfav/{{fav.id_MisFavoritos}}" >
+                <input type="submit" value="Eliminar"> 
+            </form></td> 
+
+        </tr>
+    </p>
+    {% endfor %}    
+    </table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>  
+</center></p>
+{% endblock %}

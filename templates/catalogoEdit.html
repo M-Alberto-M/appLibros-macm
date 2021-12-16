@@ -1,0 +1,45 @@
+{% extends "layout.html" %} 
+
+{% block contenido %}
+
+<head>
+    <link rel="icon" href="{{url_for('static',filename = 'images/mainLog.png')}}"  type="image/x-icon" />
+    <title> Catalogo Editorial</title> 
+</head>
+
+<h2><center>Lista de editoriales registradas  </center></h2>
+
+<p><center>
+    
+    <table class="styled-table" styles="width:100%">
+        <thead>
+        <tr>
+            <td> Editoriales</td>
+            
+            </tr>
+        </thead>
+
+    {% for editorial in Editorial %}
+    
+    <p> 
+        <tr>
+            <td>{{editorial.nombre_editorial}}</td> 
+            
+            
+            <td><form action="/eliminaredit/{{editorial.id_editorial}}" >
+                <input type="submit" value="Eliminar"> 
+            </form></td> 
+
+            <td><form action="/editedit/{{editorial.id_editorial}}" >
+                <input type="submit" value="Editar"> 
+            </form></td> 
+        </tr>
+    </p>
+    {% endfor %}    
+    </table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>  
+</center></p>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+   {% block titulo %} Pagina modificar {% endblock %}
+   
+   {% block contenido %}
+ <title>Modificar Genero</title> 
+   <style>
+    #mod{ background-color: seashell;}
+
+ </style>
+   
+   <h3><center>Modificar Genero registrado </center></h3> <br>
+    <h4><center>En esta sección podrás modificar tus generos registrados </center></h4>
+
+    <p><center>
+
+   <form action= "/modificarGenero" method= "post"  class="box"  id=mod >
+
+      <label for = "nombre"> Nombre del Genero: </label><br>
+      <input type = "text" name = "nombre_genero" value = "{{genero.nombre_genero}}">
+      <br>
+      <input type = "hidden" name="idgen" value = " {{genero.id_genero}}">
+      <br>
+      <input type = "submit" value = "Modificar Genero">
+      
+  
+   </form> 
+
+</center></p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p> 
+{% endblock %}

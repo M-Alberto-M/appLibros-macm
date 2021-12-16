@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+   {% block titulo %} Pagina modificar {% endblock %}
+   
+   {% block contenido %}
+ <title>Modificar Autor</title> 
+   <style>
+    #mod{ background-color: seashell;}
+
+ </style>
+   
+   <h3><center>Modificar autor registrado </center></h3> <br>
+    <h4><center>En esta sección podrás modificar tus autores registrados </center></h4>
+
+    <p><center>
+   
+   <form action= "/modificarAutor" method= "post"  class="box"  id=mod >
+
+      <label for = "nombre"> Nombre del autor: </label><br>
+      <input type = "text" name = "nombre_autor" value = "{{autor.nombre_autor}}">
+      <br>
+      <label for = "fecha"> Fecha de nacimiento: </label><br>
+      <input type = "date" name = "fecha_nac" value = "{{autor.fecha_nac}}">     
+      <br>
+      <label for = "nacionalidad"> Nacionalidad: </label><br>
+      <input type = "text" name = "nacionalidad" value = "{{autor.nacionalidad}}">
+      <br>
+      <input type = "hidden" name="idautor" value = " {{autor.id_autor}}">
+      <br>
+      <input type = "submit" value = "Modificar Autor">
+  
+   </form> 
+
+</center></p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p> 
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "layout.html" %} 
+
+{% block contenido %}
+
+<style>
+    #lib{ background-color: seashell;}
+    #fp{ background-color: #EBE6E3; }
+ </style>
+
+<head>
+    <link rel="icon" href="{{url_for('static',filename = 'images/mainLog.png')}}"  type="image/x-icon" />
+    <title>RegistroAutor</title> 
+</head>
+   <h2><center>Bienvenido  <br>
+    Captura los de datos de un autor </center></h2>
+    <p>&nbsp;</p>
+<body>
+    <section id=fp class="hero is-primary is-fullheight">
+        
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                        <form action="/registrarAutor" id=lib  method ="post" class="box">
+
+                            <div class="field">
+                                <label for="" class="label">Nombre del autor</label>
+                                <div class="control has-icons-right">
+                                    <input class="input" name="nombre_autor" type="text">
+                                    <span class="icon is-small is-right">
+                                        <i class="fa fa-envelope"></i>
+                                    </span>
+                                </div>  
+                            </div>
+                            <p>&nbsp;</p>
+
+                            <div class="field">
+                                <label for=""  class="label">Fecha de Nacimiento</label>
+                                <div class="control has-icons-right">
+                                    <input class="input" name="fecha_nac" type="date">
+                                    <span class="icon is-small is-right">
+                                        <i class="fa fa-lock"></i>
+                                    </span>
+                                </div>  
+                            </div>
+                            <p>&nbsp;</p>
+
+                            <div class="field">
+                                <label for=""  class="label">Nacionalidad</label>
+                                <div class="control has-icons-right">
+                                    <input class="input" name="nacionalidad" type="text">
+                                    <span class="icon is-small is-right">
+                                        <i class="fa fa-lock"></i>
+                                    </span>
+                                </div>  
+                            </div>
+                            <p>&nbsp;</p>
+
+
+                            <div class="has-text-centered">
+                                <button class= "button is-vcentered is-black is-outlined" onClick="window.alert('Autor añadido exitosamente!!!')";>Registrar autor</button>
+                                <!-- <script>window.alert("Libro añadido"); </script>  -->                                      
+                            </div>
+
+                        </form>                  
+                    </div>
+                </div>
+            </div>
+       
+    </section>
+</body>
+<p>&nbsp;</p>
+
+
+{% endblock %}

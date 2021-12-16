@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+    <style>
+        #logimg{width: 45%; }
+        #wall{width: 125%; top: 0%;}
+        #bx{ background-color: seashell;}
+     </style>
+
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/css/estilo.css">
+    <link rel="icon" href="{{url_for('static',filename = 'images/mainLog.png')}}"  type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registro</title>  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+    
+  </head>
+  
+  <body>
+    <div class="columns is-vcentered">
+      <div class="login column is-4 ">
+        <section class="section">
+            <form  id=bx  action = "/registrar_usuario" method ="post" class="box"> 
+            <div class="has-text-centered">           
+                
+                <label class="label">Crea tu cuenta<br>
+                    Registra un correo y contraseña</label>
+            </div>
+            <p>&nbsp;</p>
+          <div class="has-text-centered">
+            
+            <img id=logimg src="{{url_for('static',filename = 'images/mainLog.png')}}"  >
+         
+        </div>
+        <p>&nbsp;</p>
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control has-icons-right">
+              <input class="input" name="email" type="email">
+              <span class="icon is-small is-right">
+                <i class="fa fa-envelope"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Password</label>
+            <div class="control has-icons-right">
+              <input class="input" name="password" type="password">
+              <span class="icon is-small is-right">
+                <i class="fa fa-key"></i>
+              </span>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <button class="button is-vcentered is-black is-outlined" onClick="window.alert('Registro de usuario exitoso')" >Registrar</button>
+             
+
+          </div>
+
+          <div class="has-text-centered">
+            <a href="/"> ¿Ya tienes una cuenta? ¡Ingresa aqui!</a>
+          </div>
+            </form>
+        </section>
+      </div>
+      <div >
+        <div id=wall>
+        <img class="d1" src="{{url_for('static',filename = 'images/walLain.png')}}" >
+      
+      </div>
+    </div>
+
+  </body>
+</html>

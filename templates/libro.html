@@ -1,0 +1,126 @@
+{% extends "layout.html" %} 
+
+{% block contenido %}
+
+<style>
+    #lib{ background-color: seashell;}
+    #fp{ background-color: #EBE6E3; }
+ </style>
+
+<head>
+    <link rel="icon" href="{{url_for('static',filename = 'images/mainLog.png')}}"  type="image/x-icon" />
+    <title>Registro libros</title> 
+</head>
+   <h2><center>Bienvenido  <br>
+    Captura los de datos de un libro </center></h2>
+<body>
+    <section id=fp class="hero is-primary is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                        <form action="/registrarLibro" id=lib  method ="post" class="box">
+
+                            <div class="field">
+                                <label for="" class="label">Titulo del libro</label>
+                                <div class="control has-icons-right">
+                                    <input class="input" name="titulo_libro" type="text">
+                                    <span class="icon is-small is-right">
+                                        <i class="fa fa-envelope"></i>
+                                    </span>
+                                </div>  
+                            </div>
+                            <p>&nbsp;</p>
+
+                            <div class="field">
+                                <label for=""  class="label">Fecha de Publicación</label>
+                                <div class="control has-icons-right">
+                                    <input class="input" name="fecha_publicacion" type="date">
+                                    <span class="icon is-small is-right">
+                                        <i class="fa fa-lock"></i>
+                                    </span>
+                                </div>  
+                            </div>
+                            <p>&nbsp;</p>
+
+                            <div class="field">
+                                <label for=""  class="label">Número de páginas</label>
+                                <div class="control has-icons-right">
+                                    <input class="input" name="numero_paginas" type="text">
+                                    <span class="icon is-small is-right">
+                                        <i class="fa fa-lock"></i>
+                                    </span>
+                                </div>  
+                            </div>
+                            <p>&nbsp;</p>
+
+                            <div class="field">
+                                <label for=""  class="label">Formato</label>
+                                <div class="control has-icons-right">
+                                    <input class="input" name="formato" type="text">
+                                    <span class="icon is-small is-right">
+                                        <i class="fa fa-lock"></i>
+                                    </span>
+                                </div>  
+                            </div>
+                            <p>&nbsp;</p>
+
+                            <div class="field">
+                                <label for=""  class="label">Volumen</label>
+                                <div class="control has-icons-right">
+                                    <input class="input" name="volumen" type="text">
+                                    <span class="icon is-small is-right">
+                                        <i class="fa fa-lock"></i>
+                                    </span>
+                                </div>  
+                            </div>
+                            <p>&nbsp;</p>
+
+                            <div class="field">
+                                <label class="label">Editorial</label>
+                                <select name="editorial">
+                                {% for editorial in consulta_editorial %}
+                                    <option value="{{editorial.id_editorial}}">{{editorial.nombre_editorial}}</option>
+                                {% endfor %}
+                                </select>
+                            </div>
+                            <p>&nbsp;</p>
+
+                            <div class="field">
+                                <label class="label">Género</label>
+                                <select name="genero">
+                                {% for genero in consulta_genero %}
+                                    <option value="{{genero.id_genero}}">{{genero.nombre_genero}}</option>
+                                {% endfor %}
+                                </select>
+                            </div>
+                            <p>&nbsp;</p>
+
+                            <div class="field">
+                                <label class="label">Autor</label>
+                                <select name="autor">
+                                {% for autor in consulta_autor %}
+                                    <option value="{{autor.id_autor}}">{{autor.nombre_autor}}</option>
+                                {% endfor %}
+                                </select>
+                            </div>
+                            <p>&nbsp;</p>
+
+                            <div class="has-text-centered">
+                                <button class= "button is-vcentered is-black is-outlined" onClick="window.alert('Libro añadido exitosamente!!!')";>Registrar Libro</button>
+                                <!-- <script>window.alert("Libro añadido"); </script>  -->
+                                                                  
+                            </div>
+
+                        </form>                  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+{% endblock %}

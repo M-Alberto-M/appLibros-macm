@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+   {% block titulo %}Pagina modificar {% endblock %}
+   
+   {% block contenido %}
+ <title>Modificar libros</title> 
+   <style>
+    #mod{ background-color: seashell;}
+
+ </style>
+   
+   <h3><center>Modificar Libro registrado </center></h3> <br>
+    <h4><center>En esta sección podrás modificar tus Libros registrados </center></h4>
+
+    <p><center>
+  
+   <form action= "/modificarLibro" method= "post"  class="box"  id=mod >
+
+      <label for = "titulo"> Titulo del libro: </label><br>
+      <input type = "text" name = "titulo_libro" value = "{{libro.titulo_libro}}">
+      <br>
+      <label for = "cuerpo"> Fecha de publicacion: </label><br>
+      <input type = "date" name = "fecha_publicacion" value = "{{libro.fecha_publicacion}}">     
+      <br>
+      <label for = "titulo"> Numero de paginas: </label><br>
+      <input type = "text" name = "numero_paginas" value = "{{libro.numero_paginas}}">
+      <br>
+      <label for = "titulo"> Formato: </label><br>
+      <input type = "text" name = "formato" value = "{{libro.formato}}">
+      <br>
+      <label for = "titulo"> Volumen: </label><br>
+      <input type = "text" name = "volumen" value = "{{libro.volumen}}">
+      <br>
+
+      <div class="field">
+         <label class="label">Editorial</label>
+         <select name="editorial">
+         {% for editorial in consulta_editorial %}
+             <option value="{{editorial.id_editorial}}">{{editorial.nombre_editorial}}</option>
+         {% endfor %}
+         </select>
+      </div>
+      <!-- <label for = "titulo"> Editorial: </label><br>
+      <input type = "text" name = "id_editorial" value = "{{libro.id_editorial}}"> -->
+      <br>
+
+      <div class="field">
+         <label class="label">Género</label>
+         <select name="genero">
+         {% for genero in consulta_genero %}
+             <option value="{{genero.id_genero}}">{{genero.nombre_genero}}</option>
+         {% endfor %}
+         </select>
+      </div>
+      
+
+      <!-- <label for = "titulo"> Genero: </label><br>
+      <input type = "text" name = "id_genero" value = "{{libro.id_genero}}"> -->
+      <br>
+
+      <div class="field">
+         <label class="label">Autor</label>
+         <select name="autor">
+         {% for autor in consulta_autor %}
+             <option value="{{autor.id_autor}}">{{autor.nombre_autor}}</option>
+         {% endfor %}
+         </select>
+      </div>
+
+      <!-- <label for = "titulo"> Autor: </label><br>
+      <input type = "text" name = "id_autor" value = "{{libro.id_autor}}"> -->
+      <br>
+
+      <input type = "hidden" name="idlibro" value = " {{libro.id_libro}}">
+      <br>
+      <input type = "submit" value = "Modificar Libro">
+  
+   </form> 
+
+</center></p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p> 
+{% endblock %}
