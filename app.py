@@ -91,10 +91,15 @@ class MisFavoritos(db.Model):
         self.id_MisFavoritos= id_MisFavoritos
         self.id_libro = id_libro
         self.id_usuario = id_usuario
+
                
 @app.route("/")
 def index():
     return render_template("index.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -387,11 +392,14 @@ def fav(id):
     return redirect("/misFavoritos")
 
 @app.route("/eliminarfavs/<id>")
-def favs(id):
-    fav = MisFavoritos.query.filter_by(id_misfavoritos=int(id)).delete()
+def eliminarfavs(id):
+    Favoritos = MisFavoritos.query.filter_by(id_MisFavoritos=int(id)).delete()
     
     db.session.commit()
-    return redirect("/catalogoEditorial")
+    return redirect("/misFavoritos")
+
+
+
 
 if __name__ == "__main__":
     db.create_all()

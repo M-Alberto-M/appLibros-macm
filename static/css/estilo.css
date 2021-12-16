@@ -75,3 +75,14 @@ td{
     font-weight: bold;
     color: #e90592;
 }
+
+.button1{
+    width: 360px;
+
+}
+
+.button1:hover {
+    background-color: black;
+    color: white;
+   
+  }

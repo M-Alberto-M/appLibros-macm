@@ -8,61 +8,72 @@
  </style>
 
 <head>
+    <link rel="stylesheet" href="/static/css/estilo.css">
     <link rel="icon" href="{{url_for('static',filename = 'images/mainLog.png')}}"  type="image/x-icon" />
     <title>Menu</title> 
+    
+
 </head>
   
 
 
 <body>
-    <section id=fp class="hero  is-fullheight ">
-        <div class="container ">
+    <!-- <section id=fp class="hero  is-fullheight "> -->
+        <div class="container " id=fp>
             <!-- <div class="columns is-centered"> -->
                 <section class="section is-small ">
                     <h2 class="title"><center>Menu Principal </center></h2>
                     <p>&nbsp;</p>
-                    <div class="columns is-7-fullhd  ">
+                    <div class="columns is-2-fullhd  ">
                       
 
-                        <div class="column has-text-centered  ">
-                            <a href="/libro"> <button id="bttnRegLib" class="button  is-vcentered is-black is-outlined is-large is-size-3"  >Registra un Libro</button> </a>
+                        <div class="column has-text-centered">
+                            <a href="/libro"> <button  id="bttnRegLib" class="button1  is-vcentered  is-outlined is-medium is-size-3"  >Registra un Libro</button> </a>
                             <p>&nbsp;</p>
 
-                            <a href="/autor"> <button id="bttnRegLib" class="button  is-vcentered is-black is-outlined is-large is-size-3"  >Registra un Autor</button> </a>
+                            <a href="/autor"> <button id="bttnRegLib" class="button1  is-vcentered  is-outlined is-large is-size-3"  >Registra un Autor</button> </a>
                             <p>&nbsp;</p>
 
-                            <a href="/editorial"> <button id="bttnRegLib" class="button  is-vcentered is-black is-outlined is-large is-size-3"  >Registra una Editorial</button> </a>
+                            <a href="/editorial"> <button id="bttnRegLib" class="button1  is-vcentered is-outlined is-large is-size-3"  >Registra una Editorial</button> </a>
                             <p>&nbsp;</p>
 
-                            <a href="/genero"> <button id="bttnRegLib" class="button  is-vcentered is-black is-outlined is-large is-size-3"  >Registra un Genero</button> </a>
+                            <a href="/genero"> <button id="bttnRegLib" class="button1 is-vcentered  is-outlined is-large is-size-3"  >Registra un Genero</button> </a>
                             <p>&nbsp;</p>
                             
                         </div>
-                    
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
 
-                        <div class="has-text-centered">
-                            <a href="/catalogoLibros"><button id="bttnCatLib" class="button  is-vcentered is-black is-outlined is-large  is-size-3">Catalogo de Libros</button> </a>
+                        <div class="column has-text-centered">
+                            <a href="/catalogoLibros"><button id="bttnCatLib" class="button1  is-vcentered is-outlined is-large  is-size-3">Catalogo de Libros</button> </a>
                             <p>&nbsp;</p>
 
-                            <a href="/misFavoritos"><button  id="bttnMisFavs" class="button is-vcentered is-black is-outlined is-large  is-size-3">Mis Favoritos</button></a>
+                            <a href="/misFavoritos"><button  id="bttnMisFavs" class="button1 is-vcentered  is-outlined is-large  is-size-3">Mis Favoritos</button></a>
                             <p>&nbsp;</p>
 
-                            <a href="/catalogoAutor"><button  id="bttnCatAut" class="button is-vcentered is-black is-outlined is-large is-size-3 ">Catalogo de Autores</button></a>
+                            <a href="/catalogoAutor"><button  id="bttnCatAut" class="button1 is-vcentered  is-outlined is-large is-size-3 ">Catalogo de Autores</button></a>
                             <p>&nbsp;</p>
 
-                            <a href="/catalogoEditorial"> <button  id="bttnCatEdit" class="button is-vcentered is-black is-outlined is-large is-size-3">Catalogo de Editoriales</button></a>
+                            <a href="/catalogoEditorial"> <button  id="bttnCatEdit" class="button1 is-vcentered  is-outlined is-large is-size-3">Catalogo de Editoriales</button></a>
                             <p>&nbsp;</p>
 
-                            <a href="/catalogoGenero" ><button  id="bttnCatGen" class="button is-vcentered is-black is-outlined is-large is-size-3">Catalogo de Generos</button> </a>
+                            <a href="/catalogoGenero" ><button  id="bttnCatGen" class="button1 is-vcentered  is-outlined is-large is-size-3">Catalogo de Generos</button> </a>
                                
                         </div>
+                        
 
                     </div>
                 </section>
             <!-- </div> -->
         </div>
-    </section>
+        <!-- </section> -->
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
 </body>
+<p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
 
 
 {% endblock %}
