@@ -40,8 +40,9 @@
             <td>{{libro.nombre_genero}}</td> 
             <td>{{libro.nombre_autor}}</td> 
 
-            <td><form action="/misFavoritos/{{libro.id_libro}}" >
-                <input type="submit" value="Favorito" name="favorito"> 
+            
+            <td><form action="/agregarFavs/{{libro.id_libro}}"  method ="post">
+                <input type="submit"> 
             </form></td> 
 
             <td><form action="/eliminarlibro/{{libro.id_libro}}" >

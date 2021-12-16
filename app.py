@@ -1,9 +1,11 @@
 from flask import Flask, render_template, redirect, request 
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
+import random
+from random import randint
 
 app = Flask(__name__)
-# app.config["SQLALCHEMY_DATABASE_URI"]="postgresql://postgres:bionicle@localhost:5432/db"
+#app.config["SQLALCHEMY_DATABASE_URI"]="postgresql://postgres:bionicle@localhost:5432/db"
 app.config["SQLALCHEMY_DATABASE_URI"]='postgres://hiltevtnvnajpm:f974b6be22ccf430929642987bc03b3c61bcaf48569113be84ef78d0637049e8@ec2-34-193-235-32.compute-1.amazonaws.com:5432/d68jo8qlcja2dg'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
 
@@ -75,6 +77,11 @@ class Genero(db.Model):
     
 class MisFavoritos(db.Model):
     __tablename__= "misFavoritos"
+    
+    # rowid = db.Column(String, primary_key = True)
+    # column_a = db.Column(String)
+    # column_b = db.Column(String)
+
     id_MisFavoritos = db.Column(db.Integer, primary_key=True)
 
     id_libro = db.Column(db.Integer, db.ForeignKey("libro.id_libro"))
@@ -355,27 +362,36 @@ def modificarEdit():
 def menu():
     return render_template("Menu.html")
 
-@app.route("/misFavoritos/<id>")
-def favoritos(id):
+@app.route("/misFavoritos")
+def favoritos():
+    
+    consulta_favs = MisFavoritos.query.join(Libro, MisFavoritos.id_libro == Libro.id_libro).join(Usuarios, MisFavoritos.id_usuario == Usuarios.id_usuario).add_columns(Libro.titulo_libro, Libro.id_libro)
+    
+    return render_template("misFavoritos.html", Favoritos = consulta_favs)
+
+@app.route("/agregarFavs/<id>", methods=['POST'])
+def fav(id):
+    
+    libro = Libro.query.filter_by(id_libro=int(id)).first()
+    id_libro = libro.id_libro
+    id_usuario = int(1)
+    # math.floor(math.random() * (max - min + 1)) + min 
+    r1 = random.randint(0, 100000)
+    id_MisFavoritos = r1
+    
+    fav_nuevo=MisFavoritos(  id_MisFavoritos = id_MisFavoritos, id_libro=id_libro, id_usuario=id_usuario)
+     
+    db.session.add(fav_nuevo)
+    db.session.commit()
    
-    consulta_favs = Libro.query.all(id)
-    for favoritos in consulta_favs:
-        favorito = favoritos.titulo_libro
-       
-    return render_template("misFavoritos.html", Favoritos = consulta_favs )
-
-@app.route("/catalogoLibros", methods=['POST'])
-def fav():
-    
-
-    favlib = request.form["favorito"]
-
-    favs = MisFavoritos(favlib = favlib)
-    db.session.add(favs)
-    db.session.commit()
-    
-    db.session.commit()
     return redirect("/misFavoritos")
+
+@app.route("/eliminarfavs/<id>")
+def favs(id):
+    fav = MisFavoritos.query.filter_by(id_misfavoritos=int(id)).delete()
+    
+    db.session.commit()
+    return redirect("/catalogoEditorial")
 
 if __name__ == "__main__":
     db.create_all()
