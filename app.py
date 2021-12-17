@@ -396,7 +396,7 @@ def eliminarfavs(id):
     Favoritos = MisFavoritos.query.filter_by(id_MisFavoritos=int(id)).delete()
     
     db.session.commit()
-    return redirect("/misFavoritos")
+    return redirect("/misFavoritos", Favoritos=Favoritos)
 #
 
 if __name__ == "__main__":
