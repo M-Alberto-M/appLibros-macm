@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, request 
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
-import randomm
+import random
 from random import randint
 
 app = Flask(__name__)
@@ -413,9 +413,6 @@ def eliminarfavs(id):
     
     # db.session.commit()
     # return redirect("/catalogoEditorial")
-
-
-
 
 if __name__ == "__main__":
     db.create_all()
