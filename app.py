@@ -222,6 +222,15 @@ def eliminar(id):
     db.session.commit()
     return redirect("/catalogoLibros")
 
+    # @app.route("/eliminarlibro/<id>")
+    # def eliminar(id):
+    # #Favoritos = MisFavoritos.query.filter_by(id_MisFavoritos=int(id)).delete()
+    # libros = relationship("MisFavoritos", cascade = "all,delete")
+    # libro1  = db.query(Libro).filter_by(id=1).first()
+
+    # db.session.commit()
+    # return redirect("/misFavoritos")
+
 
 @app.route("/edit/<id>")
 def modlib(id):
@@ -391,13 +400,22 @@ def fav(id):
    
     return redirect("/misFavoritos")
 
-@app.route("/eliminarfavs/<id>")
+@app.route("/eliminarfav/<id>")
 def eliminarfavs(id):
-    Favoritos = MisFavoritos.query.filter_by(id_MisFavoritos=int(id)).delete()
+    fav = MisFavoritos.query.filter_by(id_MisFavoritos=int(id)).delete()
     
     db.session.commit()
-    return redirect("/misFavoritos", Favoritos=Favoritos)
-#
+    return redirect("/misFavoritos")
+
+# @app.route("/eliminaredit/<id>")
+# def eliminarEdit(id):
+#     editorial = Editorial.query.filter_by(id_editorial=int(id)).delete()
+    
+    # db.session.commit()
+    # return redirect("/catalogoEditorial")
+
+
+
 
 if __name__ == "__main__":
     db.create_all()
