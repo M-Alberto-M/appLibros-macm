@@ -407,12 +407,6 @@ def eliminarfavs(id):
     db.session.commit()
     return redirect("/misFavoritos")
 
-# @app.route("/eliminaredit/<id>")
-# def eliminarEdit(id):
-#     editorial = Editorial.query.filter_by(id_editorial=int(id)).delete()
-    
-    # db.session.commit()
-    # return redirect("/catalogoEditorial")
 
 if __name__ == "__main__":
     db.create_all()
