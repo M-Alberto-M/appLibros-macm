@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, request 
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
-import random
+import randomm
 from random import randint
 
 app = Flask(__name__)
